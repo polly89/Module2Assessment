@@ -205,12 +205,25 @@ console.log(filteredFood('treat'))
 */
 
 //CODE HERE
-function filterByProperty(property, number, type) => {
-    const filtered = foodArray.filter((e)) => {
-        return filtered 
-    }
+const string = (property) => {
+    for(let i in foodArr){
+    console.log(foodArr[i].rating)
 }
 
+const filterByProperty = (str, num, type) => {
+    const filtered = foodArr.filter((e) => {
+        console.log(e.rating)
+        if(type === 'above' && e.str > num) {
+           return e > num
+        } else if(type === 'below') {
+           return e < num 
+        }
+        
+    })
+    return filtered
+};
+
+console.log(filterByProperty('rating', 4, 'above'))
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
