@@ -22,8 +22,9 @@
 */
 
 //CODE HERE
+const greetUser = (username) => (`Welcome back, ${username}.`)
 
-
+console.log(greetUser('Andrew'))
 
 
 
@@ -51,7 +52,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+const canWeDeliver = (zipcode) => {
+    if(deliveryAreaZipCodes.includes(zipcode)){
+        return `You're in our delivery zone!`
+    } else{
+        return `We're sorry, we can't deliver to that address.`
+    }
+}
 
+console.log(canWeDeliver(49055))
 
 /* 
     Problem 2 Continued
@@ -72,6 +81,22 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
 
+
+const canWeDeliverTwo = (zipcode) => {
+    let weDeliver = true; 
+    
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if(deliveryAreaZipCodes[i] === (zipcode)) {
+             weDeliver = true;
+             break; 
+        } else {
+            weDeliver = false;
+        }
+    }
+    return weDeliver;
+}
+
+console.log(canWeDeliverTwo(85213))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -109,7 +134,16 @@ const deals = [
 //CODE HERE
 
 
+const newDeal = (obj, str, index)=> {
+        obj[index].title = obj[index].title.replace(obj[index].title, str);
+        return obj;
+    }
 
+    console.log(newDeal(deals, '$10% Off', 0))
+
+
+
+// console.log(newDeal(deals, '10% Off'))
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -122,5 +156,10 @@ const deals = [
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
+const modDeal = (obj, str, index)=> {
+    obj[index].desc = obj[index].desc.replace(obj[index].desc, str);
+    return obj;
+}
 
+console.log(modDeal(deals, 'This deal lasts until the end of April!', 1))
 //CODE HERE
