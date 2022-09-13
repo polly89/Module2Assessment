@@ -120,7 +120,7 @@ const foodArr= [
         'price': 11,
         'category': 'beverage',
         'popularity': 8,
-        'rating': 4.5,
+        'rating': 3.5,
         'tags': ['alcoholic', 'drink', 'happy hour'],
     },
     {
@@ -205,25 +205,20 @@ console.log(filteredFood('treat'))
 */
 
 //CODE HERE
-const string = (property) => {
-    for(let i in foodArr){
-    console.log(foodArr[i].rating)
-}
 
-const filterByProperty = (str, num, type) => {
+function filterByProperty(str, num, type){
     const filtered = foodArr.filter((e) => {
-        console.log(e.rating)
-        if(type === 'above' && e.str > num) {
-           return e > num
-        } else if(type === 'below') {
-           return e < num 
+        if(type === 'above' && e[str] > num) {
+           return e[str]
+        } else if(type === 'below' && e[str] < num) {
+           return e[str] 
         }
         
     })
     return filtered
 };
 
-console.log(filterByProperty('rating', 4, 'above'))
+
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -232,3 +227,4 @@ console.log(filterByProperty('rating', 4, 'above'))
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 9, 'below'))
