@@ -143,7 +143,6 @@ const newDeal = (obj, str, index)=> {
 
 
 
-// console.log(newDeal(deals, '10% Off'))
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -156,10 +155,11 @@ const newDeal = (obj, str, index)=> {
     whitespace in this string, since it seems
     to be displaying wrong on the live site.
 */
+//CODE HERE
+
 const modDeal = (obj, str, index)=> {
     obj[index].desc = obj[index].desc.replace(obj[index].desc, str);
     return obj;
 }
 
 console.log(modDeal(deals, 'This deal lasts until the end of April!', 1))
-//CODE HERE

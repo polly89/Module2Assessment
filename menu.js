@@ -31,9 +31,16 @@
 */
 
 //CODE HERE
+const pizza = {
+    'name': 'Margherita Pizza',
+    'price': 16,
+    'category': 'entree',
+    'popularity': 10,
+    'rating': 4.5,
+    'tags': ['vegitarian', 'chef specialty', 'kids'],
+}
 
-
-
+console.log(`Order ${pizza.name} for only $${pizza.price}.`) // this is just for fun 
 //////////////////PROBLEM 2////////////////////
 /* 
     Let's print a few values from our pizza object.
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(`This item is ${pizza.tags[0]}, a ${pizza.tags[1]}, and it's on the ${pizza.tags[2]} menu.`)
 
 /*
     Third, destructure the price off of the
@@ -64,6 +71,8 @@
 
 //CODE HERE
 
+const { price } = pizza
+console.log(`That will be $${price}.`) 
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+const { category } = pizza
+console.log(`This is an ${category}.`)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +98,48 @@
 */
 
 //CODE HERE
-
+const foodArr= [
+    {
+        'name': 'Frita',
+        'price': 3.69,
+        'category': 'entree',
+        'popularity': 8,
+        'rating': 4.7,
+        'tags': ['burger', 'spicy', 'Cuban'],  
+    },
+    {
+        'name': 'Caprese salad',
+        'price': 8,
+        'category': 'appetizer',
+        'popularity': 8,
+        'rating': 4.4,
+        'tags': ['salad', 'light'],
+    },
+    {
+        'name': 'Mojito',
+        'price': 11,
+        'category': 'beverage',
+        'popularity': 8,
+        'rating': 4.5,
+        'tags': ['alcoholic', 'drink', 'happy hour'],
+    },
+    {
+        'name': 'Tiramisu',
+        'price': 6,
+        'category': 'dessert',
+        'popularity': 7,
+        'rating': 4.3,
+        'tags': ['semisweet', 'treat'],
+    },
+     {
+        'name': 'Expresso',
+        'price': 10,
+        'category': 'beverage',
+        'popularity': 6,
+        'rating': 4,
+        'tags': ['coffee', 'barista specialty'],
+    },
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -104,9 +155,14 @@
 */
 
 //CODE HERE
+const filteredFood = (tag) => {
+    const filtered = foodArr.filter((e) => {
+        return e.tags.includes(tag);
+    });
+    return filtered;
+};
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+console.log(filteredFood('treat'))
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,7 +205,11 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type) => {
+    const filtered = foodArray.filter((e)) => {
+        return filtered 
+    }
+}
 
 /*
     Invoke the `filterByProperty` function passing

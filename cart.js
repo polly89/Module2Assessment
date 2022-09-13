@@ -35,7 +35,13 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((prevVal, currVal) => {
+    return prevVal + currVal.price
+}, 0)
+
+const cartTotal = summedPrice
+
+console.log(`Your total, prior to taxes and coupons, is at ${cartTotal}`)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,8 +60,14 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, discount){
+    const totalTaxed = (cartTotal * .06) + cartTotal;
+    const calcDiscount = (totalTaxed * discount) / 100 ;
 
+    return totalTaxed - calcDiscount
+}
 
+console.log(`Your total amount with taxes and a coupon code amount to ${calcFinalPrice(cartTotal, 10)}`)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,8 +90,14 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
-
+My cart page should include:
+- Name = string
+- Delivery or pick up = boolean
+- Delivery Address = string
+- Phone = number
+- Food item = string
+- Quantity = number
+- Price = number
 */
 
 /*
@@ -88,3 +106,14 @@ const cart = [
 */
 
 //CODE HERE
+const restaurantOrder = {
+    'user1': 'Tom Jeff',
+    'Delivery': true,
+    'Address': '1255 First Street, St Joseph, MI 49045',
+    'Phone': 4536784567,
+    'Item': 'large cheese pizza',
+    'quantity': 2,
+    'price': 15,
+}
+
+console.log(restaurantOrder)
